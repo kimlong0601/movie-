@@ -1,0 +1,132 @@
+.detail{
+    width: 100%;
+    position: relative;
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, #000000, rgba($black, 0));
+    }
+    .detail-container{
+        @include flex(center,center);
+        position: relative;
+        gap: 0 30px;
+        &__poster{
+            position: relative;
+            @include tablet{
+                display: none;
+            }
+            img{
+                width: 100%;
+                height: 550px;
+                object-fit: fill;
+                border-radius: 40px;
+            }
+        }
+        &__info{
+            width: 70%;
+            position: relative;
+            @include tablet{
+                width: 100%;
+            }
+            &__genres{
+                margin: 25px 0;
+                @include flex(center, flex-start);
+
+                @include mobile{
+                    @include flex(flex-start, flex-start);
+                    flex-direction: column;
+                }
+                .line{
+                    width: 1px;
+                    height: 40px;
+                    background-color: $white;
+                    margin-right: 10px;
+                    @include mobile{
+                        display: none;
+                    }
+                }
+                .genres{
+                    @include mobile{
+                        margin-bottom: 20px;
+                    }
+                    span{
+                        padding: 10px 20px;
+                        border: 1px solid $white;
+                        border-radius: 50px;
+                        margin-right: 10px;
+                        transition: 0.3s ease;
+                        @include mobile{
+                            padding: 5px 10px;
+                        }
+                    }
+                    span:hover{
+                        background-color: $white;
+                        color: $main-color;
+                        cursor: pointer;
+                        font-weight: 600;
+                        transition: 0.3s ease;
+                    }
+                }
+                
+            }
+            &__overview{
+                margin: 15px 0;
+            }
+            &__casts{
+
+                .casts{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                    gap: 10px;
+                    &__item{
+                        &__image{
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+    
+            }
+            &__btn{
+                margin-top: 10px;
+                button{
+                    margin-right: 10px;
+                }
+            }
+        }
+        
+    }
+    .video{
+        margin-top: 50px;
+        position: relative;
+        .video-list{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+            @include mobile{
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+    }
+}

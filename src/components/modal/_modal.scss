@@ -1,0 +1,26 @@
+.modal{
+    @include flex(center,center);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &-content{
+        padding: 2rem;
+        width: 50%;
+        opacity: 0;
+        transform: translateY(-250px);
+        transition: transform 0.6s ease, opacity 0.6s ease;
+        position: relative;
+    }
+}

@@ -1,0 +1,84 @@
+.header{
+    width: 100%;
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: 0.3s ease;
+    @include tablet{
+        height: $header-tablet-height;
+    }
+    @include mobile{
+        height: $header-mobile-height;
+    }
+    &.shrink{
+        height: $header-shrink-height;
+        background-color: $black;
+    }
+    .container{
+        height: 100%
+    }
+    
+    nav{
+        @include flex(center,space-between);
+        height: 100%;
+        width: 100%;
+        .header-logo{
+            height: 100%;
+            @include flex(center,center);
+            h1{
+                font-size: $large-font;
+                color: $white;
+                @include mobile{
+                    font-size: 28px;
+                }
+                span{
+                    color: $main-color;
+                }
+            }
+        }
+        .menu-toggle{
+            display:none;
+            @include tablet{
+                display: block;
+                font-size: $medium-font;
+                color: $white;
+            }
+        }
+        .main-menu{
+            @include flex(center,center);
+            gap: 0 40px;
+            font-size: 20px;
+            height: 100%;
+            @include tablet{
+                flex-direction: column;
+                width: 50%;
+                height: 70vh;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 98;
+                gap: 50px 0;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                &.active{
+                    transform: translateX(0);
+                    transition: transform 0.3s ease;
+                }
+            }
+            .menu-close{
+                display: none;
+                @include tablet{
+                    display: block;
+                    position: absolute;
+                    top: 3%;
+                    left: 10%;
+                    font-size: $medium-font;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

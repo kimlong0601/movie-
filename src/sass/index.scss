@@ -1,0 +1,19 @@
+@import './variables';
+@import './mixin';
+@import './base';
+
+
+@import '../components/button/button';
+@import '../components/modal/modal';
+@import '../components/input/input';
+
+@import '../components/headerComponents/header';
+@import '../components/footerComponent/footer';
+
+@import '../components/homeComponents/hero-slide/hero-slide';
+@import '../components/homeComponents/Movie/movie-list';
+@import '../components/homeComponents/moviecard/movie-card';
+@import '../components/movieGrid/movie-grid';
+
+@import '../sass/pagesComponent/detail';
+@import '../sass/pagesComponent/catalog';
