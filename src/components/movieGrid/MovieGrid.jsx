@@ -32,7 +32,7 @@ const MovieGrid = props => {
                 const params ={
                     query: keyword
                 }
-                response = await tmdbApi.get('search/' + props.category,{params});
+                response = await tmdbApi.get('search/' + props.category, {params});
             }
             setItems(response.data.results);
             setTotalPage(response.data.total_pages);
@@ -69,9 +69,7 @@ const MovieGrid = props => {
     
   return (
     <>
-        <div className="search-section">
-            <Search category={props.category} keyword={keyword}/>
-        </div>
+        
         <div className="movie-grid">
             {
                 item.map((item, i) => (
